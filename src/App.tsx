@@ -13,6 +13,26 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'row', height: '100vh' }}>
       {/* 3D Model Canvas */}
       <div style={{ flex: 1 }}>
+        {/* Button */}
+        <button onClick={() => {
+          const toggleEvent = new Event('toggleAnimation');
+          window.dispatchEvent(toggleEvent);
+        }}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          padding: '10px',
+          backgroundColor: 'black',
+          color: 'white',
+          border: 'none',
+          cursor: 'pointer',
+          zIndex: 1,
+        }}
+        >
+          Toggle Animation
+        </button>
+
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={0.3} />
